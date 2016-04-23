@@ -1,0 +1,36 @@
+
+<form name="uploadForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myAdluploadLabel" translate="adlviewerApp.adlparser.home.uploadLabel">Upload a new Adl File</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.adlparser.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="adlviewerApp.adlparser.filename" for="field_filename">Filename</label>
+             <input type="file" nv-file-select="" uploader="vm.uploader" />
+        </div>
+        <div class="form-group" ng-show="vm.uploader.isHTML5">
+            <label class="control-label" translate="adlviewerApp.adlparser.progress" for="field_content">Progress</label>
+            <div class="progress" style="margin-bottom: 0;">
+                                        <div class="progress-bar" role="progressbar" ng-style="{ 'width': vm.uploader.queue[0].progress + '%' }"></div>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="adlviewerApp.adlparser.upload">Upload</span>
+        </button>
+    </div>
+</form>

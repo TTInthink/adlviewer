@@ -1,0 +1,24 @@
+{
+    "adlviewerApp": {
+        "description" : {
+            "home": {
+                "title": "Descriptions",
+                "createLabel": "Create a new Description",
+                "createOrEditLabel": "Create or edit a Description",
+                "search": "Search for Description"
+            },
+            "created": "A new Description is created with identifier {{ param }}",
+            "updated": "A Description is updated with identifier {{ param }}",
+            "deleted": "A Description is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Description {{ id }}?"
+            },
+            "detail": {
+                "title": "Description"
+            },
+            "concept": "Concept",
+            "longConcept": "LongConcept",
+            "author": "Author"
+        }
+    }
+}

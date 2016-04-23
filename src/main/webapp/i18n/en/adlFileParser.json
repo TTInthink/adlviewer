@@ -1,0 +1,22 @@
+{
+    "adlviewerApp": {
+        "adlFileParser" : {
+            "home": {
+                "title": "AdlFileParsers",
+                "createLabel": "Create a new AdlFileParser",
+                "createOrEditLabel": "Create or edit a AdlFileParser",
+                "search": "Search for AdlFileParser"
+            },
+            "created": "A new AdlFileParser is created with identifier {{ param }}",
+            "updated": "A AdlFileParser is updated with identifier {{ param }}",
+            "deleted": "A AdlFileParser is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AdlFileParser {{ id }}?"
+            },
+            "detail": {
+                "title": "AdlFileParser"
+            },
+            "archetypeID": "ArchetypeID"
+        }
+    }
+}

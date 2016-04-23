@@ -1,0 +1,1 @@
+set MAVEN_OPTS=-Dhttp.proxyHost=proxy.intra.bt.com -Dhttp.proxyPort=8080 -Dhttps.proxyHost=proxy.intra.bt.com -Dhttps.proxyPort=8080

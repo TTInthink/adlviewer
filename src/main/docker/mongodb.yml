@@ -1,0 +1,9 @@
+version: '2'
+services:
+    adlviewer-mongodb:
+        container_name: adlviewer-mongodb
+        image: mongo:3.2.3
+        # volumes:
+        #     - ~/volumes/jhipster/adlviewer/mongodb/:/data/db/
+        ports:
+            - 27017:27017

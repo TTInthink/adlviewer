@@ -1,0 +1,25 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "filename",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dateUpload",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "comment",
+            "fieldType": "String"
+        }
+    ],
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "adl_file",
+    "pagination": "pager"
+}

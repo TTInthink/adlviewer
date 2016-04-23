@@ -1,0 +1,14 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "archetypeID",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        }
+    ],
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "adl_file_parser",
+    "pagination": "pager"
+}

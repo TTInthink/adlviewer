@@ -1,0 +1,29 @@
+{
+    "adlviewerApp": {
+        "adlFile" : {
+            "home": {
+                "title": "AdlFiles",
+                "createLabel": "Create a new AdlFile",
+                "createOrEditLabel": "Create or edit a AdlFile",
+                "search": "Search for AdlFile",
+                "uploadLabel":"Upload a new AdlFile"
+                
+            },
+            "created": "A new AdlFile is created with identifier {{ param }}",
+            "updated": "A AdlFile is updated with identifier {{ param }}",
+            "deleted": "A AdlFile is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete AdlFile {{ id }}?"
+            },
+            "detail": {
+                "title": "AdlFile"
+            },
+            "filename": "Filename",
+            "size": "Size",
+            "dateUpload": "DateUpload",
+            "comment": "Comment",
+            "progress":"Progress",
+            "upload":"Upload"
+        }
+    }
+}

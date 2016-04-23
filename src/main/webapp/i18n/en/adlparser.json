@@ -1,0 +1,26 @@
+{
+    "adlviewerApp": {
+        "adlparser" : {
+            "home": {
+                "title": "Adlparsers",
+                "createLabel": "Create a new Adlparser",
+                "createOrEditLabel": "Create or edit a Adlparser",
+                "search": "Search for Adlparser",
+                "uploadLabel": "Upload a new Adl File"
+            },
+            "created": "A new Adlparser is created with identifier {{ param }}",
+            "updated": "A Adlparser is updated with identifier {{ param }}",
+            "deleted": "A Adlparser is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Adlparser {{ id }}?"
+            },
+            "detail": {
+                "title": "Adlparser"
+            },
+            "filename": "Filename",
+            "content": "Content",
+            "upload": "Upload",
+            "progress":"Progress"
+        }
+    }
+}

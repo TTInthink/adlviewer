@@ -1,0 +1,51 @@
+
+
+you can set controller parameter as
+
+@RequestParam("file") MultipartFile file
+
+then you can get file name,size,etc... like
+
+file.getOriginalFilename()
+
+@RequestMapping(value = "/executesampleservice", method = RequestMethod.POST,
+    consumes = {"multipart/form-data"})
+@ResponseBody
+public boolean executeSampleService(
+        @RequestPart("properties") @Valid ConnectionProperties properties,
+        @RequestPart("file") @Valid @NotNull @NotBlank MultipartFile file) {
+    return projectService.executeSampleService(project, file);
+}
+
+formData = new FormData();
+
+formData.append("file", document.forms[formName].file.files[0]);
+formData.append('properties', new Blob([JSON.stringify({
+                "name": "root",
+                "password": "root"                    
+            })], {
+                type: "application/json"
+            }));
+-----------
+$scope.saveForm = function () {
+      var formData = new FormData();
+      var file = $scope.myFile;
+      var json = $scope.myJson;
+      formData.append("file", file);
+      formData.append("ad",JSON.stringify(json));//important: convert to JSON!
+      var req = {
+        url: '/upload',
+        method: 'POST',
+        headers: {'Content-Type': undefined},
+        data: formData,
+        transformRequest: function (data, headersGetterFunction) {
+          return data;
+        }
+      };
+	  -----
+	  @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    public @ResponseBody
+    Advertisement storeAd(@RequestPart("ad") String adString, @RequestPart("file") MultipartFile file) throws IOException {
+
+        Advertisement jsonAd = new ObjectMapper().readValue(adString, Advertisement.class);
+//do whatever you want with your file and jsonAd

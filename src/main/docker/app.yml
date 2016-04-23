@@ -1,0 +1,16 @@
+version: '2'
+services:
+    adlviewer-app:
+        image: adlviewer
+        external_links:
+            - adlviewer-mongodb:mongodb
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod
+            - SPRING_DATA_MONGODB_URI=mongodb://mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=adlviewer
+        ports:
+            - 8080:8080
+    adlviewer-mongodb:
+        extends:
+            file: mongodb.yml
+            service: adlviewer-mongodb
