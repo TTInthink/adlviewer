@@ -1,5 +1,5 @@
 # adlviewer
-<<<<<<< HEAD
+
 
 This application was generated using JHipster, you can find documentation and help at [https://jhipster.github.io](https://jhipster.github.io).
 
@@ -79,4 +79,4 @@ To setup this project in Jenkins, use the following configuration:
 [Protractor]: https://angular.github.io/protractor/
 =======
 Draft for Open EHR implementation using SpringFramework and JHipster generator
->>>>>>> c8ce9fe123d22194e069881ca748ff67be5b3c21
+

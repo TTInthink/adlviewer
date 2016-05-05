@@ -17,12 +17,13 @@ public class ArchetypeDescription<T extends AdlFileParserDescription> extends Pa
 	private Archetype archetype;
 	
 	private T description;
-	
+
 	public ArchetypeDescription(Archetype archetype,T description){
 		super(archetype);
 		this.archetype=archetype;
 		this.description=description;
 	}
+	
 
 	@Override
 	public T parseArchetype() {

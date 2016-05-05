@@ -10,5 +10,5 @@ public abstract class Parsed<T> {
 		this.archetype=archetype;
 	}
 	
-	abstract T parseArchetype();
+	public abstract T parseArchetype();
 }

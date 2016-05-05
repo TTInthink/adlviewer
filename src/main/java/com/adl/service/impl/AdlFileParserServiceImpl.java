@@ -3,9 +3,10 @@ package com.adl.service.impl;
 import com.adl.service.AdlFileParserService;
 import com.adl.service.ArchetypeLoaderService;
 import com.adl.business.archetype.ArchetypeDescription;
+import com.adl.business.archetype.ArchetypeIdentification;
 import com.adl.domain.AdlFileParser;
 import com.adl.domain.AdlFileParserDescription;
-import com.adl.repository.AdlFileParserDescriptionRepository;
+import com.adl.domain.AdlFileParserIdentification;
 import com.adl.repository.AdlFileParserRepository;
 
 import org.openehr.am.archetype.Archetype;
@@ -14,10 +15,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-
 import javax.inject.Inject;
-
-import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -35,8 +33,11 @@ public class AdlFileParserServiceImpl implements AdlFileParserService{
     @Inject
     private ArchetypeLoaderService archetypeLoaderService;
     
-    @Inject
-    private AdlFileParserDescriptionRepository adlFileParserDescriptionRepository;
+//    @Inject
+//    private AdlFileParserDescriptionRepository adlFileParserDescriptionRepository;
+//    
+//    @Inject
+//    private AdlFileParserIdentificationRepository adlFileParserIdentificationRepository; 
 
     private Archetype archetype;
     
@@ -49,6 +50,7 @@ public class AdlFileParserServiceImpl implements AdlFileParserService{
     public AdlFileParser save(AdlFileParser adlFileParser) {
         log.debug("Request to save AdlFileParser : {}", adlFileParser);
         AdlFileParser result = adlFileParserRepository.save(adlFileParser);
+        loadAdl(result);
         return result;
     }
 
@@ -85,9 +87,42 @@ public class AdlFileParserServiceImpl implements AdlFileParserService{
         log.debug("Request to delete AdlFileParser : {}", id);
         adlFileParserRepository.delete(id);
     }
+    
+    private void loadAdl(AdlFileParser adlFileParser){
+    	Future<Archetype> archetypeFuture =archetypeLoaderService.loadAdl(adlFileParser.getArchetypeID());
+		log.debug("Request to load ADL File :"+adlFileParser.getArchetypeID());
+		try {
+			//wait for archetype to finish, else go to sleep, and release the process to other thread
+			while(archetypeFuture.isDone()){
+				Thread.sleep(100); //100-millisecond pause between each check
+			}
+			this.archetype=archetypeFuture.get();
+			parseArchetype(adlFileParser);
+		} catch (InterruptedException | ExecutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+    }
+    
+    private void parseArchetype(AdlFileParser adlFileParser){
+    	
+		AdlFileParserDescription adlFileParserDescription=new AdlFileParserDescription();
+		ArchetypeDescription<AdlFileParserDescription> archetypeDescription=new ArchetypeDescription<AdlFileParserDescription>(archetype,adlFileParserDescription);
+		AdlFileParserDescription description=archetypeDescription.parseArchetype();
+		adlFileParser.setAdlFileParserDescription(description);
+		
+		AdlFileParserIdentification adlFileParserIdentification=new AdlFileParserIdentification();
+		ArchetypeIdentification<AdlFileParserIdentification> archetypeIdentification=new ArchetypeIdentification<AdlFileParserIdentification>(archetype,adlFileParserIdentification);
+		AdlFileParserIdentification identification=archetypeIdentification.parseArchetype();
+		adlFileParser.setAdlFileParserIdentification(identification);
+		
+		adlFileParserRepository.save(adlFileParser);
+		
+    }
 
 	@Override
-	public void loadAdl(String adlFile) {
+	public void loadAdl(String adlFile,String id) {
 		// TODO Auto-generated method stub
 		Future<Archetype> archetypeFuture =archetypeLoaderService.loadAdl(adlFile);
 		log.debug("Request to load ADL File :"+adlFile);
@@ -97,7 +132,7 @@ public class AdlFileParserServiceImpl implements AdlFileParserService{
 				Thread.sleep(100); //100-millisecond pause between each check
 			}
 			this.archetype=archetypeFuture.get();
-			parseArchetype();
+//			parseArchetype(id);
 		} catch (InterruptedException | ExecutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -105,13 +140,7 @@ public class AdlFileParserServiceImpl implements AdlFileParserService{
 
 	}
 	
-	private void parseArchetype(){
-		//Description parser
-		AdlFileParserDescription adlFileParserDescription=new AdlFileParserDescription();
-		ArchetypeDescription<AdlFileParserDescription> archetypeDescription=new ArchetypeDescription<AdlFileParserDescription>(archetype,adlFileParserDescription);
-		AdlFileParserDescription description=archetypeDescription.parseArchetype();
-		adlFileParserDescriptionRepository.save(description);
-	}
+
   
     
 }

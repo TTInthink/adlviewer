@@ -61,7 +61,7 @@ public class AdlFileParserResource {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert("adlFileParser", "idexists", "A new adlFileParser cannot already have an ID")).body(null);
         }
         AdlFileParser result = adlFileParserService.save(adlFileParser);
-        adlFileParserService.loadAdl(adlFileParser.getArchetypeID());
+//        adlFileParserService.loadAdl(adlFileParser.getArchetypeID(),result.getId());
         return ResponseEntity.created(new URI("/api/adl-file-parsers/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert("adlFileParser", result.getId().toString()))
             .body(result);

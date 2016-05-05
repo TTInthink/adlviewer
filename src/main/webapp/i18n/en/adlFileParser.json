@@ -14,7 +14,13 @@
                 "question": "Are you sure you want to delete AdlFileParser {{ id }}?"
             },
             "detail": {
-                "title": "AdlFileParser"
+                "title": "AdlFileParser",
+                "identification": "Identification",
+                "adlversion": "ADL Version",
+                "uId": "UId",
+                "controlled": "Controlled"
+                
+                
             },
             "archetypeID": "ArchetypeID"
         }

@@ -73,6 +73,7 @@
                 entity: ['$stateParams', 'AdlFileParser', function($stateParams, AdlFileParser) {
                     return AdlFileParser.get({id : $stateParams.id});
                 }]
+                
             }
         })
         .state('adl-file-parser.new', {

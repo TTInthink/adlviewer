@@ -21,6 +21,10 @@ public class AdlFileParser implements Serializable {
 
     @Field("archetype_id")
     private String archetypeID;
+    
+    private AdlFileParserDescription adlFileParserDescription;
+    
+    private AdlFileParserIdentification adlFileParserIdentification;
 
     public String getId() {
         return id;
@@ -65,4 +69,23 @@ public class AdlFileParser implements Serializable {
             ", archetypeID='" + archetypeID + "'" +
             '}';
     }
+
+	public AdlFileParserDescription getAdlFileParserDescription() {
+		return adlFileParserDescription;
+	}
+
+	public void setAdlFileParserDescription(
+			AdlFileParserDescription adlFileParserDescription) {
+		this.adlFileParserDescription = adlFileParserDescription;
+	}
+
+	public AdlFileParserIdentification getAdlFileParserIdentification() {
+		return adlFileParserIdentification;
+	}
+
+	public void setAdlFileParserIdentification(
+			AdlFileParserIdentification adlFileParserIdentification) {
+		this.adlFileParserIdentification = adlFileParserIdentification;
+	}
+ 
 }

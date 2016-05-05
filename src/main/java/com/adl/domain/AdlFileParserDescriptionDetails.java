@@ -3,8 +3,6 @@ package com.adl.domain;
 import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
-
-import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Document(collection = "adl_file_parser_description_details")
@@ -12,9 +10,6 @@ public class AdlFileParserDescriptionDetails implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
-	@Id
-    private String id;
-	
 	private String language;
 	private String purpose;
 	private List<String> keywords;
@@ -72,12 +67,6 @@ public class AdlFileParserDescriptionDetails implements Serializable{
 	public void setOtherDetails(Map<String, String> otherDetails) {
 		this.otherDetails = otherDetails;
 	}
-	public String getId() {
-		return id;
-	}
-	public void setId(String id) {
-		this.id = id;
-	}
-	
+
 	
 }
