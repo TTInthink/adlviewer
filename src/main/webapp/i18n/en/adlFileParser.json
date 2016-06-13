@@ -18,7 +18,18 @@
                 "identification": "Identification",
                 "adlversion": "ADL Version",
                 "uId": "UId",
-                "controlled": "Controlled"
+                "controlled": "Controlled",
+                "name": "Name",
+                "organisation": "Organisation",
+                "email":"Email",
+                "date":"Date",
+                "language":"Language",
+                "purpose":"Purpose",
+                "use":"Use",
+                "keywords":"Keywords",
+                "misuse":"Misuse",
+                "copyright":"Copyright"
+            
                 
                 
             },
