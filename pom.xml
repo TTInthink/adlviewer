@@ -39,6 +39,7 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <metrics-spark-reporter.version>1.2</metrics-spark-reporter.version>
         <metrics-spring.version>3.1.3</metrics-spring.version>
+        <openehr.version>1.0.14-SNAPSHOT</openehr.version>
         <!-- Sonar properties -->
         <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
         <run.addResources>false</run.addResources>
@@ -224,52 +225,52 @@
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>adl-parser</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>adl-serializer</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>archetype-validator</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>dadl-binding</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>dadl-parser</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>measure-serv</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>mini-termserv</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>oet-parser</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>openehr-aom</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>openehr-ap</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <!-- jhipster-needle-maven-add-dependency -->
 
@@ -283,32 +284,32 @@
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>openehr-rm-core</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>openehr-rm-domain</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>rm-builder</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>rm-skeleton</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>xml-binding</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <dependency>
             <groupId>openehr</groupId>
             <artifactId>xml-serializer</artifactId>
-            <version>1.0.14-SNAPSHOT</version>
+            <version>${openehr.version}</version>
         </dependency>
         <!-- social -->
         <dependency>
